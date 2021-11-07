@@ -3,7 +3,7 @@
 function traerInformacion(){
     $.ajax({
         url:'http://168.138.149.45:8080/api/Motorbike/all',
-        data:"{}",
+       // data:"{}",
         type:'GET',
         dataType:'json',
         contentType:"application/json; charset=utf-8",
