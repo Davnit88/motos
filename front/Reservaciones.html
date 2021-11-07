@@ -7,13 +7,13 @@
 <meta name="keywords" content="HTML, CSS, JavaScript">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="misestilos.css">
-<script type="text/javascript" src="js/misFuncionesMensajes.js"></script>  
+<script type="text/javascript" src="js/misFuncionesReservas.js"></script>  
 </head>
 
 <body>
     <header id="cabeceralogo">
     <div>
-    <h1>Mensajes </h1>
+    <h1>Reservaciones </h1>
     </div>
     </header>
     <nav id="menuprincipal">
@@ -29,31 +29,25 @@
     </ul>
     </div>
     </nav>
+ 
+<label>STARTDATE: Escoja la Fecha Inicio de la Reservacion</label>
+<input class="controlReservation" type="date" id="startDate" placeholder="startDate"><br>
+<label>DEVOLUTIONDATE: Escoja la Fecha Devolucion de la Reservacion</label>
+<input class="controlReservation" type="date" id="devolutionDate" placeholder="devolutionDate"><br>
+<label>STATUS: Estado de la Reservacion "completed / cancelled</label>
+<input class="controlReservation" type="text" id="status" placeholder="escriba completed o cancelled para el estado de la Reservacion ">
 
-    <div id="resultadoMensajes"></div>
-    
-    
-    <script type="text/javascript"> 
-    window.onload = autoInicioMensajes();
-    </script>
-
-
-    <input type="text" id="messagetext" placeholder="mensaje">
-    <button onclick="guardarInformacionMensajes()">Guardar Mensajes</button>
-    
-    
-    
-    <select id="select-client"></select>
-
+<select id="select-client"></select>
     <script type="text/javascript">
         window.onload = autoInicioRelacionCliente();
     </script>
-
-    <select id="select-skate"></select>
-    
-    <script type="text/javascript">
+        <select id="select-skate"></select>
+        <script type="text/javascript">
             window.onload = autoInicioSkate();
-    </script>
+        </script>
+ <button onclick=" agregarReservation()">Guardar Reserva</button>
+ <button onclick="  listarReservation()">Mostrar Reservas</button>
 
+ <div id="miListaReservation"></div>
 </body>
 </html>

@@ -7,13 +7,13 @@
 <meta name="keywords" content="HTML, CSS, JavaScript">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="misestilos.css">
-<script type="text/javascript" src="js/misFuncionesClientes.js"></script>  
+<script type="text/javascript" src="js/misFuncionesCategorias.js"></script>  
 </head>
 
 <body>
     <header id="cabeceralogo">
     <div>
-    <h1>Clientes </h1>
+    <h1>Categorias </h1>
     </div>
     </header>
     <nav id="menuprincipal">
@@ -30,27 +30,15 @@
     </div>
     </nav>
 
-    <div id="resultado3"></div>
-<script type="text/javascript"> 
-window.onload = autoInicioCliente();
-</script>
-<div>
-    <input type="text" id="Clemail" placeholder="email">
-    <input type="text" id="Clpassword" placeholder="password">
-    <input type="text" id="Clname" placeholder="nombre">
-    <input type="number" id="Clage" placeholder="edad">
-</div>
-<button onclick="guardarInformacionCliente()">Guardar Cliente</button>
-<!--Estilo de la Tabla-->
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid rgb(0, 42, 70);
-        border-collapse: collapse;
-    }
-</style>
-
-  
+    <div id="resultado1"></div>
+    <button onclick="traerInformacionCategorias()" > Consultar Categorias</button>
+    
+    <div>
+        <input type="text" id="Cname" placeholder="name">
+        <input type="text" id="Cdescription" placeholder="description">
+       
+        
+    </div>
+    <button onclick="guardarInformacionCategorias()">Guardar Categorias</button>
 </body>
 </html>
