@@ -24,7 +24,7 @@ function traerInformacionMotos() {
         datatype: "JSON",
         success: function (response) {
             console.log(response);
-            pintarRespuestaSkate(response);
+            pintarRespuestaMotos(response);
         }
 
     });
