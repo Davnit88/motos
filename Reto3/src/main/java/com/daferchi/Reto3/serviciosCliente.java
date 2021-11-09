@@ -50,6 +50,9 @@ public class serviciosCliente {
                 if(client.getMessages()!=null){
                     e.get().setMessages(client.getMessages());
                 }
+                if(client.getAge()!=null){
+                    e.get().setAge(client.getAge());
+                }
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
