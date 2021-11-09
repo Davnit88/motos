@@ -49,13 +49,13 @@ function pintarRespuestaMotos(response){
         myTable+="<td>" + response[i].year + "</td>";
         myTable+="<td>" + response[i].description + "</td>";
         myTable+="<td>" + response[i].category.name + "</td>";
-        myTable+='<td><button class = "botonSkate2" onclick="borrar(' + response[i].id + ')">Borrar Skate!</button></td>';
-        myTable+='<td><button class = "botonSkate2" onclick="cargarDatosSkate(' + response[i].id + ')">Editar Motos!</button></td>';
+        myTable+='<td><button class = "botonSkate2" onclick="borrar(' + response[i].id + ')">Borrar Moto!</button></td>';
+        myTable+='<td><button class = "botonSkate2" onclick="cargarDatosMotos(' + response[i].id + ')">Editar Motos!</button></td>';
         myTable+='<td><button class = "botonSkate2" onclick="actualizar(' + response[i].id + ')">Actualizar Motos!</button></td>';
         myTable+="</tr>";
     }
     myTable+="</table>";
-    $("#miListaSkate").html(myTable);
+    $("#miListaMotos").html(myTable);
 }
 //Capturar informacion para Actualizar
 function cargarDatosMotos(id) {
