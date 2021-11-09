@@ -31,10 +31,7 @@ public class serviciosReservation {
             }else{
                 return reservation;
             }
-        
-        
         }
-    
     }
     public Reservation update (Reservation reservation){
         if(reservation.getIdReservation()!=null){
@@ -59,4 +56,11 @@ public class serviciosReservation {
             return reservation;
         }
     } 
+    public boolean deleteReservation(int reservationId){
+       Boolean aBoolean = getReservation(reservationId) .map (reservation ->{
+           metodosCrud.delete(reservation);
+           return true;
+       }).orElse(false);
+       return aBoolean;
+    }
 }

@@ -21,4 +21,7 @@ public class RepositorioMotos {
     public Motorbikes save(Motorbikes motorbikes){
         return crud.save(motorbikes);
     }
+     void delete(Motorbikes motorbikes) {
+        crud.delete(motorbikes);
+    }
 }

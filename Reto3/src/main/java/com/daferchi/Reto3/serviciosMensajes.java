@@ -31,9 +31,32 @@ public class serviciosMensajes {
             }else{
                 return messages;
             }
-        
-        
+
         }
-    
+    }
+    public Messages update (Messages messages){
+        if(messages.getIdMessage()!=null){
+            Optional<Messages> e= metodosCrud.getMessages(messages.getIdMessage());
+            if(!e.isEmpty()){
+                if(messages.getMessageText()!=null){
+                    e.get().setMessageText(messages.getMessageText());
+                }
+               
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return messages;
+            }
+        
+        }else {
+            return messages;
+        }
+    } 
+    public boolean deleteMessages(int messagesId){
+       Boolean aBoolean = getMessages(messagesId) .map (messages ->{
+           metodosCrud.delete(messages);
+           return true;
+       }).orElse(false);
+       return aBoolean;
     }
 }

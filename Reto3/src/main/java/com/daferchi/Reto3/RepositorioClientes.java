@@ -23,4 +23,7 @@ public class RepositorioClientes {
     public Cliente save(Cliente client){
         return crud.save(client);
     }
+     void delete(Cliente client) {
+        crud.delete(client);
+    }
 }

@@ -30,4 +30,37 @@ public class serviciosMotos {
             }
         }
     }
+     public Motorbikes update (Motorbikes motorbikes){
+        if(motorbikes.getId()!=null){
+            Optional<Motorbikes> e= metodosCrud.getMotos(motorbikes.getId());
+            if(!e.isEmpty()){
+                if(motorbikes.getName()!=null){
+                    e.get().setName(motorbikes.getName());
+                }
+                if(motorbikes.getBrand()!=null){
+                    e.get().setBrand(motorbikes.getBrand());
+                }
+                if(motorbikes.getYear()!=null){
+                    e.get().setYear(motorbikes.getYear());
+                }
+                if(motorbikes.getDescription()!=null){
+                    e.get().setDescription(motorbikes.getDescription());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return motorbikes;
+            }
+        
+        }else {
+            return motorbikes;
+        }
+    } 
+    public boolean deleteMotorbikes(int motorbikesId){
+       Boolean aBoolean = getMotos(motorbikesId) .map (motorbikes ->{
+           metodosCrud.delete(motorbikes);
+           return true;
+       }).orElse(false);
+       return aBoolean;
+    }
 }
