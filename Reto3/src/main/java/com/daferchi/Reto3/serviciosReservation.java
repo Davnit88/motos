@@ -68,7 +68,7 @@ public class serviciosReservation {
        return aBoolean;
     }
     public List<CountReservation>getTopReservation(){
-        return metodosCrud.getTopReservas();
+        return metodosCrud.getTopCliente();
     }
     public StatusAmount getStatusReport(){
         List<Reservation> completed=metodosCrud.getReservationByStatus("completed");

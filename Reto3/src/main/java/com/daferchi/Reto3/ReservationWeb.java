@@ -54,7 +54,7 @@ public class ReservationWeb {
     @GetMapping("/report-status")
     public StatusAmount getReservationStatus(){
         return servicios.getStatusReport();
-    }
+    }             
     @GetMapping("/report-clients")
     public List<CountReservation> getCountReservations(){
         return servicios.getTopReservation();
