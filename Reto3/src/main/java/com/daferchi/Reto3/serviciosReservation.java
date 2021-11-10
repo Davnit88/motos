@@ -67,7 +67,7 @@ public class serviciosReservation {
        }).orElse(false);
        return aBoolean;
     }
-    public List<CountReservation>getTopReservation(){
+    public List<CountCliente>getTopCliente(){
         return metodosCrud.getTopCliente();
     }
     public StatusAmount getStatusReport(){

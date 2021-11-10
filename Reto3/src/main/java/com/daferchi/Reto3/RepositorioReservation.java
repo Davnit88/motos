@@ -35,8 +35,8 @@ public class RepositorioReservation {
     public List<Reservation> getReservationPeriod(Date dateOne,Date dateTwo){
         return crud.findAllByStartDateAfterAndStartDateBefore(dateOne, dateTwo);
     }
-    public List<CountReservation>getTopCliente(){
-        List<CountReservation> res=new ArrayList<>();
+    public List<CountCliente>getTopCliente(){
+        List<CountCliente> res=new ArrayList<>();
         
        List<Object[]> report=crud.countTotalReservationByCliente();
        for(int i=0;i<report.size();i++){
@@ -46,7 +46,7 @@ public class RepositorioReservation {
        CountReservation cr=new CountReservation(cantidad,cat);
        res.add(cr);
        */
-       res.add(new CountReservation((Long)report.get(i)[1],(Reservation)report.get(i)[0]));
+       res.add(new CountCliente((Long)report.get(i)[1],(Cliente)report.get(i)[0]));
        }
        return res;
     }

@@ -56,8 +56,8 @@ public class ReservationWeb {
         return servicios.getStatusReport();
     }             
     @GetMapping("/report-clients")
-    public List<CountReservation> getCountReservations(){
-        return servicios.getTopReservation();
+    public List<CountCliente> getCountCliente(){
+        return servicios.getTopCliente();
     }
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
     public List<Reservation> getDatesReport(@PathVariable ("dateOne")String d1,@PathVariable ("dateTwo") String d2){
