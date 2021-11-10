@@ -39,7 +39,7 @@ public class ClienteWeb {
     public Cliente save(@RequestBody Cliente client) {
         return servicios.save(client);
     } 
-      @PutMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente update(@RequestBody Cliente client) {
         return servicios.update(client);

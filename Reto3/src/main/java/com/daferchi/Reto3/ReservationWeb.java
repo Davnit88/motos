@@ -50,4 +50,17 @@ public class ReservationWeb {
     public boolean deleteReservation(@PathVariable("id") int idReservation) {
         return servicios.deleteReservation(idReservation);
     }
+     //peticiones reto 5
+    @GetMapping("/report-status")
+    public StatusAmount getReservationStatus(){
+        return servicios.getStatusReport();
+    }
+    @GetMapping("/report-clients")
+    public List<CountReservation> getCountReservations(){
+        return servicios.getTopReservation();
+    }
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getDatesReport(@PathVariable ("dateOne")String d1,@PathVariable ("dateTwo") String d2){
+        return servicios.getReservationPeriod(d1, d2);
+    }
 }

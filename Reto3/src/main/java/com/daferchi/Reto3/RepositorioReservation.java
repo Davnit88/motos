@@ -2,6 +2,8 @@
 
 package com.daferchi.Reto3;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +29,26 @@ public class RepositorioReservation {
     void delete(Reservation reservation) {
         crud.delete(reservation);
     }
+    public List<Reservation> getReservationByStatus(String status){
+      return crud.findAllByStatus(status);
+    }
+    public List<Reservation> getReservationPeriod(Date dateOne,Date dateTwo){
+        return crud.findAllByStartDateAfterAndStartDateBefore(dateOne, dateTwo);
+    }
+    public List<CountReservation>getTopReservas(){
+        List<CountReservation> res=new ArrayList<>();
+        
+       List<Object[]> report=crud.countTotalReservationByStatus();
+       for(int i=0;i<report.size();i++){
+           /*
+           Reservation cat=(Reservation) report.get(i)[0];
+       Long cantidad=(Long) report.get(i)[1];
+       CountReservation cr=new CountReservation(cantidad,cat);
+       res.add(cr);
+       */
+       res.add(new CountReservation((Long)report.get(i)[1],(Reservation)report.get(i)[0]));
+       }
+       return res;
+    }
+     
 }
